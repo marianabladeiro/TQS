@@ -1,2 +1,2 @@
 # TQS
-Resolution of the practical classes of the TQS course
+Resolution of the practical classes for the TQS course
