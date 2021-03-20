@@ -63,6 +63,12 @@ public class SetOfNaturalsTest {
 
     //b)
 
+    //check if, when a set is instantiated, it has size 0
+    @Test
+    public void testSizeInitial() {
+        assertEquals(0, setA.size());
+    }
+
     //check if exception is thrown when a value added is there already
     @Test
     public void testAddDuplicateValue() {
@@ -82,5 +88,18 @@ public class SetOfNaturalsTest {
 
     }
 
+    //check that only numbers > 0 are added
+    @Test
+    public void testAddNotNatural() {
+        assertThrows(IllegalArgumentException.class, () -> setC.add(-5));
+        assertThrows(IllegalArgumentException.class, () -> setC.add(0));
+    }
+
+    //check contains or not a certain element
+    @Test
+    public void testContains() {
+        assertTrue(setB.contains(10));
+        assertFalse(setB.contains(80));
+    }
 
 }
