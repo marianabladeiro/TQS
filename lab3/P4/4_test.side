@@ -1,0 +1,192 @@
+{
+  "id": "a95d7157-6538-40ba-aeae-9bc751e9ff7d",
+  "version": "2.0",
+  "name": "4_test",
+  "url": "https://www.toptal.com",
+  "tests": [{
+    "id": "d7853192-2def-4ad7-a1fe-c32f5a97dcb6",
+    "name": "Untitled",
+    "commands": [{
+      "id": "d48c38d0-0093-47ee-a4b6-f2f5809c183f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d05f1e5d-e4f4-4bf6-819c-861e9919e07a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1031",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "608f25df-bc19-4a56-b729-296d3a2b7270",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Apply as a Freelancer",
+      "targets": [
+        ["linkText=Apply as a Freelancer", "linkText"],
+        ["css=.\\_3Tzn-Ksn:nth-child(1) > .\\_1bcYCljm", "css:finder"],
+        ["xpath=//a[contains(text(),'Apply as a Freelancer')]", "xpath:link"],
+        ["xpath=//nav[@id='nav']/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/talent/apply')]", "xpath:href"],
+        ["xpath=//nav/div/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Apply as a Freelancer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1781e79-333e-40cd-aae2-5e2b89cb35a2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.has-default_value",
+      "targets": [
+        ["css=.has-default_value", "css:finder"],
+        ["xpath=//form[@id='new_talent_create_applicant']/section/div/div/fieldset/div[4]/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f89b8718-9978-40ac-86f5-a5618880e2d1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.is-active > .custom_select-options_item_title",
+      "targets": [
+        ["css=.is-active > .custom_select-options_item_title", "css:finder"],
+        ["xpath=//form[@id='new_talent_create_applicant']/section/div/div/fieldset/div[4]/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7af11d58-a8f3-421e-97fe-68b9e1b94c04",
+      "comment": "",
+      "command": "click",
+      "target": "id=talent_create_applicant_full_name",
+      "targets": [
+        ["id=talent_create_applicant_full_name", "id"],
+        ["name=talent_create_applicant[full_name]", "name"],
+        ["css=#talent_create_applicant_full_name", "css:finder"],
+        ["xpath=//input[@id='talent_create_applicant_full_name']", "xpath:attributes"],
+        ["xpath=//form[@id='new_talent_create_applicant']/section/div/div/fieldset/div[5]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "051af8e3-5bf4-48c6-a6d0-dba4a8ec52d5",
+      "comment": "",
+      "command": "click",
+      "target": "id=talent_create_applicant_full_name",
+      "targets": [
+        ["id=talent_create_applicant_full_name", "id"],
+        ["name=talent_create_applicant[full_name]", "name"],
+        ["css=#talent_create_applicant_full_name", "css:finder"],
+        ["xpath=//input[@id='talent_create_applicant_full_name']", "xpath:attributes"],
+        ["xpath=//form[@id='new_talent_create_applicant']/section/div/div/fieldset/div[5]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "32caa44d-3744-4958-ada0-4ed1383a7155",
+      "comment": "",
+      "command": "click",
+      "target": "id=talent_create_applicant_email",
+      "targets": [
+        ["id=talent_create_applicant_email", "id"],
+        ["name=talent_create_applicant[email]", "name"],
+        ["css=#talent_create_applicant_email", "css:finder"],
+        ["xpath=//input[@id='talent_create_applicant_email']", "xpath:attributes"],
+        ["xpath=//form[@id='new_talent_create_applicant']/section/div/div/fieldset/div[6]/input", "xpath:idRelative"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b13dc23-4202-4025-a8a6-9b0adad7aa8d",
+      "comment": "",
+      "command": "click",
+      "target": "id=talent_create_applicant_password",
+      "targets": [
+        ["id=talent_create_applicant_password", "id"],
+        ["name=talent_create_applicant[password]", "name"],
+        ["css=#talent_create_applicant_password", "css:finder"],
+        ["xpath=//input[@id='talent_create_applicant_password']", "xpath:attributes"],
+        ["xpath=//form[@id='new_talent_create_applicant']/section/div/div/fieldset/div[7]/input", "xpath:idRelative"],
+        ["xpath=//div[7]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9484768-5683-4cc2-965a-4b3d1cfce27b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.layout_layer",
+      "targets": [
+        ["css=.layout_layer", "css:finder"],
+        ["xpath=//body[@id='top']/div", "xpath:idRelative"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "917332eb-aa2c-4c91-8bb1-578fa1c30208",
+      "comment": "",
+      "command": "click",
+      "target": "id=talent_create_applicant_password_confirmation",
+      "targets": [
+        ["id=talent_create_applicant_password_confirmation", "id"],
+        ["name=talent_create_applicant[password_confirmation]", "name"],
+        ["css=#talent_create_applicant_password_confirmation", "css:finder"],
+        ["xpath=//input[@id='talent_create_applicant_password_confirmation']", "xpath:attributes"],
+        ["xpath=//form[@id='new_talent_create_applicant']/section/div/div/fieldset/div[8]/input", "xpath:idRelative"],
+        ["xpath=//div[8]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "48d4baf6-69fb-441c-a2c8-a55cbb00d72e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.layout_layer",
+      "targets": [
+        ["css=.layout_layer", "css:finder"],
+        ["xpath=//body[@id='top']/div", "xpath:idRelative"],
+        ["xpath=//div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1cc9badd-d997-43c5-bd8f-a8c93c91179d",
+      "comment": "",
+      "command": "click",
+      "target": "id=save_new_talent_create_applicant",
+      "targets": [
+        ["id=save_new_talent_create_applicant", "id"],
+        ["name=commit", "name"],
+        ["css=#save_new_talent_create_applicant", "css:finder"],
+        ["xpath=//input[@id='save_new_talent_create_applicant']", "xpath:attributes"],
+        ["xpath=//form[@id='new_talent_create_applicant']/section/div/div/footer/input", "xpath:idRelative"],
+        ["xpath=//footer/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7810ced-6bdc-4a56-ae0b-7b3d6ab2f0ca",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Sign in with LinkedIn",
+      "targets": [
+        ["linkText=Sign in with LinkedIn", "linkText"],
+        ["css=.button-is-outlined", "css:finder"],
+        ["xpath=//form[@id='new_talent_create_applicant']/section/div/div/fieldset/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/users/auth/linkedin')]", "xpath:href"],
+        ["xpath=//fieldset/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Sign in with LinkedIn')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "6a1827ac-08a1-467f-8e62-f047393262e1",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["d7853192-2def-4ad7-a1fe-c32f5a97dcb6"]
+  }],
+  "urls": ["https://www.toptal.com/"],
+  "plugins": []
+}
