@@ -1,11 +1,11 @@
-##Task 1
+## Task 1
 
-###e)
+### e)
 Print screen of the report on Euromillions-play (Lab2)
 
 The project passed the defined quality gate, although there was one bug, one security hotspots and 35 code smells.
 
-###f)
+### f)
 
 | **Issue**          | **Problem description**                        | **How to solve**                               |
 |:------------------:|:----------------------------------------------:|:----------------------------------------------:|
@@ -15,9 +15,9 @@ The project passed the defined quality gate, although there was one bug, one sec
 | Code smell (major) | Unused method parameters should be removed     | Remove this unused method parameter            |
 | Code smell (major) | Standard outputs should not be used directly to log anything | Replace this use of System.out by a logger |
 
-##Task 2
+## Task 2
 
-###a)
+### a)
 The project technical debt is the sum of the technical debt of every code smell in the project.
 In my case it was 2h 32min, meaning that this is the time it would take someone to refactor the code.
 
