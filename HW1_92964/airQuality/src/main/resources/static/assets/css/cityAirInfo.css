@@ -1,0 +1,31 @@
+#about {
+    background: url(../img/Air-1.png) center left;
+    background-repeat: no-repeat;
+}
+
+#city_name {
+    padding-left: 30%;
+    color: black;
+}
+#aqi {
+    padding-left: 40%;
+    color: black;
+    font-weight: bold;
+}
+
+#about {
+    height: 100%;
+}
+#components {
+    padding-left: 30%;
+    width: 60%;
+}
+
+table {
+    background-color: #87ceeb;
+    width: 25%;
+}
+
+td {
+    font-weight: bold;
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Air Quality</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link th:href="@{assets/img/favicon.png}" th:rel="icon">
+  <link th:href="@{assets/img/apple-touch-icon.png}" th:rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link th:href="@{assets/vendor/aos/aos.css}" th:rel="stylesheet">
+  <link th:href="@{assets/vendor/bootstrap/css/bootstrap.min.css}" th:rel="stylesheet">
+  <link th:href="@{assets/vendor/bootstrap-icons/bootstrap-icons.css}" th:rel="stylesheet">
+  <link th:href="@{assets/vendor/boxicons/css/boxicons.min.css}" th:rel="stylesheet">
+  <link th:href="@{assets/vendor/glightbox/css/glightbox.min.css}" th:rel="stylesheet">
+  <link th:href="@{assets/vendor/swiper/swiper-bundle.min.css}" th:rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link th:href="@{assets/css/style.css}" th:rel="stylesheet">
+  <link th:href="@{assets/css/cityAirInfo.css}" th:rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Regna - v4.1.0
+  * Template URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div id="logo">
+        <h1><a th:href="@{/}">AirQuality</a></h1>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" th:href="@{/}">Home</a></li>
+          <li><a class="nav-link scrollto" th:href="@{cache}">Cache</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+      <h1>Welcome to AirQuality</h1>
+      <h2>View details about the air quality of a chosen city.</h2>
+        <input type="text" name="city" id="city" placeholder="Search any city"/>
+        <a href="#components" onclick="searchAirQualityInfo()" class="btn-get-started">Search</a>
+    </div>
+
+  </section><!-- End Hero Section -->
+
+  <section id="about">
+    <h1 id="city_name">View Info</h1>
+    <div id="components">
+      <h4 id="aqi"></h4>
+      <table class="table">
+        <tr>
+          <th>Component</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>CO (µg/m³)</td>
+          <td id="co"></td>
+        </tr>
+        <tr>
+          <td>NO2 (µg/m³)</td>
+          <td id="no2"></td>
+        </tr>
+        <tr>
+          <td>O3 (µg/m³)</td>
+          <td id="o3"></td>
+        </tr>
+        <tr>
+          <td>SO2 (µg/m³)</td>
+          <td id="so2"></td>
+        </tr>
+        <tr>
+          <td>PM2_5 (µg/m³)</td>
+          <td id="pm2_5"></td>
+        </tr>
+        <tr>
+          <td>PM10 (µg/m³)</td>
+          <td id="pm_10"></td>
+        </tr>
+
+      </table>
+    </div>
+    <div id="aqiInfo">
+      <p id="aqiLevel" style="font-size: 22px; color: black"></p>
+
+    </div>
+  </section>
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong>AirQuality</strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Mariana Ladeiro, nmec 92964
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script th:src="@{assets/vendor/aos/aos.js}"></script>
+  <script th:src="@{assets/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+  <script th:src="@{assets/vendor/glightbox/js/glightbox.min.js}"></script>
+  <script th:src="@{assets/vendor/isotope-layout/isotope.pkgd.min.js}"></script>
+  <script th:src="@{assets/vendor/php-email-form/validate.js}"></script>
+  <script th:src="@{assets/vendor/purecounter/purecounter.js}"></script>
+  <script th:src="@{assets/vendor/swiper/swiper-bundle.min.js}"></script>
+
+  <!-- Template Main JS File -->
+  <script th:src="@{assets/js/main.js}"></script>
+
+  <script th:inline="javascript">
+    var components = document.getElementById("components");
+
+    function searchAirQualityInfo() {
+      var cityName = document.getElementById("city").value;
+      fetch('http://localhost:8080/api/location/'+ cityName)
+              .then(res => res.json())
+              .then(json => showAirQualityInfo(json));
+    }
+
+    //add values to html of api response
+    function showAirQualityInfo(json) {
+      var city_name = document.getElementById("city").value;
+      document.getElementById("city_name").innerText = city_name;
+      document.getElementById("aqi").innerText = "AQI: " + json[0]["aqi"];
+      document.getElementById("o3").innerHTML = json[0]["o3"];
+      document.getElementById("co").innerHTML = json[0]["co"];
+      document.getElementById("no2").innerHTML = json[0]["no2"];
+      document.getElementById("pm2_5").innerHTML = json[0]["pm25"];
+      document.getElementById("pm_10").innerHTML = json[0]["pm10"];
+      document.getElementById("so2").innerHTML = json[0]["so2"];
+
+      if (json[0]["aqi"] == null) {
+        document.getElementById("city_name").innerText = "Sorry, that city is not recognized."
+        components.style.display = 'none';
+        document.getElementById("aqiInfo").style.display = 'none';
+      }
+      else {
+        components.style.display = 'block';
+      }
+
+      var remark;
+      var healthImpacts;
+
+      //aqi level info
+      if (parseInt(json[0]["aqi"]) < 50) {
+        remark = "GOOD";
+        healthImpacts = "minimal impact";
+      }
+      else if (parseInt(json[0]["aqi"]) < 100) {
+        remark = "SATISFACTORY";
+        healthImpacts = "minor breathing discomfort to sensitive people";
+      }
+      else if (parseInt(json[0]["aqi"]) < 200) {
+        remark = "MODERATE";
+        healthImpacts = "breathing discomfort to the people with asthma and lungs and heart diseases";
+      }
+      else if (parseInt(json[0]["aqi"]) < 300) {
+        remark = "POOR";
+        healthImpacts = "breathing discomfort to most people on prolonged exposure";
+      }
+      else if (parseInt(json[0]["aqi"]) < 400) {
+        remark = "VERY POOR";
+        healthImpacts = "respiratory illness on prolonged exposure";
+      }
+      else if (parseInt(json[0]["aqi"]) > 400) {
+        remark = "SEVERE";
+        healthImpacts = "affects healthy people and seriously impacts those with existing diseases";
+      }
+
+      document.getElementById("aqiLevel").innerHTML = "An aqi level of " + json[0]["aqi"] + " is considered as " + remark + ", having " + healthImpacts + ".";
+
+
+    }
+
+
+  </script>
+
+</body>
+
+</html>
